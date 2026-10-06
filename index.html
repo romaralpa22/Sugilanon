@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sugilanon — Every Story Matters.</title>
-    <meta name="description" content="Sugilanon is a storytelling brand rooted in life and faith. We create meaningful ways to connect, reflect, and remember the stories we carry.">
+    <meta name="description" content="Sugilanon — Every story matters. Meaningful products for conversation, reflection, faith, and keepsakes.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -709,6 +709,163 @@
             color: var(--brown);
         }
 
+
+        /* POLISHED / COMPACT REFINEMENTS */
+        section {
+            padding: 82px 0;
+        }
+
+        .container {
+            width: min(1080px, 91%);
+        }
+
+        .intro {
+            font-size: 17px;
+            margin-top: 18px;
+        }
+
+        .brand-grid {
+            gap: 60px;
+        }
+
+        .mv-grid,
+        .products-grid,
+        .steps {
+            margin-top: 42px;
+        }
+
+        .mv-card {
+            padding: 34px;
+        }
+
+        .mv-card h3 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .mv-card p {
+            font-size: 18px;
+        }
+
+        .why-copy {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .pillars {
+            margin-top: 42px;
+        }
+
+        .pillar {
+            padding: 30px 24px;
+        }
+
+        .pillar h3 {
+            font-size: 31px;
+        }
+
+        .verse {
+            margin-top: 36px;
+            padding: 34px;
+        }
+
+        .belief-box {
+            margin-top: 32px;
+        }
+
+        .belief-text {
+            margin-top: 25px;
+        }
+
+        .product-info {
+            padding: 23px;
+        }
+
+        .product-info h3 {
+            font-size: 28px;
+        }
+
+        .testimonial-grid {
+            margin-top: 42px;
+        }
+
+        .testimonial-card {
+            padding: 28px;
+        }
+
+        .gallery-grid {
+            margin-top: 40px;
+        }
+
+        .gallery-main img {
+            min-height: 460px;
+        }
+
+        .gallery-side img {
+            min-height: 220px;
+        }
+
+        .cta {
+            padding: 88px 0;
+        }
+
+        .cta p {
+            margin-top: 18px;
+            font-size: 17px;
+        }
+
+        .cta .eyebrow {
+            margin-bottom: 12px;
+        }
+
+        /* A quieter image treatment so text remains readable on busy photography. */
+        .gallery-main,
+        .gallery-side {
+            position: relative;
+        }
+
+        .gallery-main::after,
+        .gallery-side::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(
+                to bottom,
+                rgba(48, 37, 30, 0.02),
+                rgba(48, 37, 30, 0.10)
+            );
+            border-radius: 3px;
+        }
+
+        @media (max-width: 850px) {
+            section {
+                padding: 68px 0;
+            }
+
+            .brand-grid {
+                gap: 36px;
+            }
+
+            .cta {
+                padding: 74px 0;
+            }
+        }
+
+        @media (max-width: 520px) {
+            section {
+                padding: 58px 0;
+            }
+
+            .container {
+                width: min(100% - 34px, 1080px);
+            }
+
+            .cta {
+                padding: 64px 0;
+            }
+        }
+
         /* MOBILE */
         @media (max-width: 850px) {
             .nav-inner {
@@ -814,7 +971,7 @@
                 <a href="#stories">Stories</a>
                 <a href="#products">Products</a>
                 <a href="#anchor">Our Anchor</a>
-                <a href="#contact" class="nav-order">Order</a>
+                <a href="https://v5.peddlr.io/store/sugilanon-prints-ph-1514460" class="nav-order" target="_blank" rel="noopener noreferrer">Order</a>
             </div>
         </div>
     </nav>
@@ -840,7 +997,7 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="http://v2.peddlr.io/store/sugilanon-prints-ph-1514460"
+                    <a href="https://v5.peddlr.io/store/sugilanon-prints-ph-1514460"
                        class="button"
                        target="_blank"
                        rel="noopener noreferrer">
@@ -1054,7 +1211,7 @@
                 </div>
 
                 <div style="text-align:center; margin-top:45px;">
-                    <a href="http://v2.peddlr.io/store/sugilanon-prints-ph-1514460"
+                    <a href="https://v5.peddlr.io/store/sugilanon-prints-ph-1514460"
                        class="button"
                        target="_blank"
                        rel="noopener noreferrer">
@@ -1210,85 +1367,6 @@
                     Come share your story with us and discover meaningful
                     ways to connect, reflect, and remember.
                 </p>
-
-                <div class="cta-buttons">
-                    <a href="http://v2.peddlr.io/store/sugilanon-prints-ph-1514460"
-                       class="button"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Shop Now
-                    </a>
-
-                    <a href="mailto:sugilanonprintsph@gmail.com"
-                       class="button button-outline">
-                        Email Us
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <div class="container contact-grid">
-
-                <div>
-                    <div class="eyebrow">Stay connected</div>
-                    <h2>Let's keep the story going.</h2>
-
-                    <div class="contact-details">
-
-                        <div class="contact-item">
-                            <strong>Email</strong>
-                            <a href="mailto:sugilanonprintsph@gmail.com">
-                                sugilanonprintsph@gmail.com
-                            </a>
-                        </div>
-
-                        <div class="contact-item">
-                            <strong>Order Online</strong>
-                            <a href="http://v2.peddlr.io/store/sugilanon-prints-ph-1514460"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                Visit the Sugilanon Prints PH Store
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="social-box">
-                    <h3>Find us online.</h3>
-
-                    <div class="social-links">
-
-                        <a class="social-link"
-                           href="https://www.instagram.com/sugilanonprintsph/"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            Instagram — @sugilanonprintsph
-                        </a>
-
-                        <a class="social-link"
-                           href="https://www.facebook.com/sugilanonprintsPH"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            Facebook — Sugilanon Prints PH
-                        </a>
-
-                        <a class="social-link"
-                           href="http://v2.peddlr.io/store/sugilanon-prints-ph-1514460"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            Shop — Sugilanon Prints PH
-                        </a>
-
-                        <a class="social-link"
-                           href="mailto:sugilanonprintsph@gmail.com">
-                            Email — sugilanonprintsph@gmail.com
-                        </a>
-
-                    </div>
-                </div>
 
             </div>
         </section>
