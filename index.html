@@ -581,6 +581,63 @@
             color: var(--brown);
         }
 
+
+        /* FIND US ONLINE */
+        .online-section {
+            padding: 0 0 95px;
+        }
+
+        .online-box {
+            background: var(--cream);
+            padding: 70px 8%;
+        }
+
+        .online-box h2 {
+            font-size: clamp(48px, 7vw, 78px);
+            color: var(--deep);
+            margin-bottom: 38px;
+        }
+
+        .online-links {
+            display: grid;
+            gap: 22px;
+        }
+
+        .online-link {
+            display: block;
+            padding: 28px 38px;
+            background: rgba(255,255,255,.68);
+            border: 1px solid rgba(111,76,62,.14);
+            font-size: 20px;
+            color: var(--ink);
+            transition: .25s ease;
+        }
+
+        .online-link:hover {
+            transform: translateY(-2px);
+            border-color: var(--brown);
+            color: var(--brown);
+        }
+
+        @media (max-width: 520px) {
+            .online-section {
+                padding-bottom: 70px;
+            }
+
+            .online-box {
+                padding: 55px 34px;
+            }
+
+            .online-box h2 {
+                margin-bottom: 30px;
+            }
+
+            .online-link {
+                padding: 24px 28px;
+                font-size: 18px;
+            }
+        }
+
         /* FOOTER */
         footer {
             padding: 35px 0;
@@ -1372,6 +1429,48 @@
         </section>
 
     </main>
+
+
+        <!-- FIND US ONLINE -->
+        <section class="online-section">
+            <div class="container">
+                <div class="online-box">
+                    <h2>Find us online.</h2>
+
+                    <div class="online-links">
+                        <a
+                            href="https://www.instagram.com/sugilanonprintsph/"
+                            class="online-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Instagram — @sugilanonprintsph
+                        </a>
+
+                        <div class="online-link">
+                            Facebook — Sugilanon Prints PH
+                        </div>
+
+                        <a
+                            href="https://v5.peddlr.io/store/sugilanon-prints-ph-1514460"
+                            class="online-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Shop — Sugilanon Prints PH
+                        </a>
+
+                        <a
+                            href="mailto:sugilanonprintsph@gmail.com"
+                            class="online-link"
+                        >
+                            Email —<br>
+                            sugilanonprintsph@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- FOOTER -->
     <footer>
