@@ -1,508 +1,639 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sugilanon | Every Story Matters</title>
+<title>Sugilanon | Every Story Matters</title>
 
-    <meta name="description"
-          content="Sugilanon creates meaningful products that inspire conversations, preserve memories, and bring people closer.">
+<meta name="description" content="Sugilanon creates meaningful products that inspire conversations, preserve memories, and bring people closer.">
+
+<style>
 
-    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #3b2a22;
+    background: #fffaf5;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+
+    background: rgba(255,250,245,0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #eaded3;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    font-size: 14px;
+}
+
+.nav-links a {
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #9b6b4a;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 88vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            #ead5c0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            #e6cdb5,
+            transparent 30%
+        ),
+        #f7eadc;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #9b6b4a;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 9vw, 100px);
+    line-height: 0.95;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #9b6b4a;
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+    font-size: 19px;
+    color: #66544a;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: #3b2a22;
+    color: white;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #9b6b4a;
+    transform: translateY(-3px);
+}
+
+.button-outline {
+    background: transparent;
+    color: #3b2a22;
+    border: 1px solid #3b2a22;
+    margin-left: 10px;
+}
+
+.button-outline:hover {
+    color: white;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: #9b6b4a;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.08;
+    margin-bottom: 22px;
+}
+
+.section-description {
+    max-width: 650px;
+    color: #6d5c52;
+    font-size: 17px;
+}
+
+
+/* =========================
+   INTRO IMAGE
+========================= */
+
+.intro-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 25px;
+
+    display: block;
+
+    box-shadow: 0 20px 60px rgba(59,42,34,0.15);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
 
-        /* =========================
-           BASIC SETTINGS
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #3b2a22;
-            background: #fffaf5;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+.about-text {
+    padding-right: 20px;
+}
+
+.about-image {
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+    background: #f4e8dc;
+}
+
+.products-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px;
+}
+
+.products-header .section-description {
+    margin: auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #fffaf5;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid #eaded3;
+
+    transition: 0.35s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(59,42,34,0.12);
+}
+
+.product-image {
+    height: 300px;
+    overflow: hidden;
+    background: #ead5c0;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background: #e6d1bd;
+
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #6e4d38;
+}
+
+.product-content {
+    padding: 30px;
+}
 
-            padding: 20px 7%;
+.product-content h3 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.product-content p {
+    color: #6d5c52;
+    margin-bottom: 20px;
+}
 
-            background: rgba(255, 250, 245, 0.95);
-            backdrop-filter: blur(10px);
+.text-link {
+    color: #9b6b4a;
+    font-weight: bold;
+}
 
-            border-bottom: 1px solid #eaded3;
-        }
 
-        .logo {
-            font-family: Georgia, serif;
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: -1px;
-        }
+/* =========================
+   FEATURE
+========================= */
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            font-size: 14px;
-        }
+.feature {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
 
-        .nav-links a {
-            transition: 0.3s;
-        }
+.feature-image {
+    overflow: hidden;
+    border-radius: 25px;
+}
 
-        .nav-links a:hover {
-            color: #9b6b4a;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 85vh;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 100px 20px;
-
-            background:
-                radial-gradient(
-                    circle at top right,
-                    #ead5c0,
-                    transparent 35%
-                ),
-                #f7eadc;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            color: #9b6b4a;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: Georgia, serif;
-            font-size: clamp(50px, 8vw, 90px);
-            line-height: 1;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #9b6b4a;
-            font-style: italic;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 35px;
-
-            font-size: 19px;
-            color: #66544a;
-        }
-
-        .button {
-            display: inline-block;
-
-            padding: 15px 30px;
-
-            background: #3b2a22;
-            color: white;
-
-            border-radius: 50px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #9b6b4a;
-            transform: translateY(-2px);
-        }
-
-        .button-outline {
-            background: transparent;
-            color: #3b2a22;
-            border: 1px solid #3b2a22;
-            margin-left: 10px;
-        }
-
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
-
-        section {
-            padding: 100px 7%;
-        }
-
-        .section-label {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            color: #9b6b4a;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-family: Georgia, serif;
-            font-size: clamp(36px, 5vw, 55px);
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .section-description {
-            max-width: 650px;
-            color: #6d5c52;
-            font-size: 17px;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .about-card {
-            min-height: 400px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 40px;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #d9b99b,
-                    #f0dfce
-                );
-
-            text-align: center;
-        }
-
-        .about-card h3 {
-            font-family: Georgia, serif;
-            font-size: 45px;
-        }
-
-
-        /* =========================
-           PRODUCTS
-        ========================= */
-
-        .products-section {
-            background: #f4e8dc;
-        }
-
-        .products-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 55px;
-        }
-
-        .products-header .section-description {
-            margin: auto;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .product-card {
-            background: #fffaf5;
-            border-radius: 20px;
-            overflow: hidden;
-
-            transition: 0.3s;
-
-            border: 1px solid #eaded3;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(59, 42, 34, 0.12);
-        }
-
-        .product-image {
-            height: 250px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #ead5c0;
-
-            font-family: Georgia, serif;
-            font-size: 28px;
-            color: #6e4d38;
-        }
-
-        .product-content {
-            padding: 30px;
-        }
-
-        .product-content h3 {
-            font-family: Georgia, serif;
-            font-size: 27px;
-            margin-bottom: 10px;
-        }
-
-        .product-content p {
-            color: #6d5c52;
-            margin-bottom: 20px;
-        }
-
-        .text-link {
-            color: #9b6b4a;
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           HOW IT WORKS
-        ========================= */
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-
-            margin-top: 50px;
-        }
-
-        .step {
-            padding: 35px;
-
-            border-top: 2px solid #9b6b4a;
-        }
-
-        .step-number {
-            font-family: Georgia, serif;
-            font-size: 45px;
-            color: #c7a384;
-        }
-
-        .step h3 {
-            font-family: Georgia, serif;
-            font-size: 25px;
-            margin: 10px 0;
-        }
-
-        .step p {
-            color: #6d5c52;
-        }
-
-
-        /* =========================
-           QUOTE
-        ========================= */
-
-        .quote-section {
-            text-align: center;
-            background: #3b2a22;
-            color: white;
-        }
-
-        .quote-section blockquote {
-            max-width: 850px;
-            margin: auto;
-
-            font-family: Georgia, serif;
-            font-size: clamp(35px, 5vw, 60px);
-            line-height: 1.15;
-        }
-
-        .quote-section p {
-            margin-top: 25px;
-            color: #d9c5b5;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            text-align: center;
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .contact p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            color: #6d5c52;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 35px 7%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            background: #211814;
-            color: #d9c5b5;
-        }
-
-        footer strong {
-            color: white;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            nav {
-                padding: 18px 5%;
-            }
-
-            .nav-links {
-                gap: 12px;
-                font-size: 12px;
-            }
-
-            section {
-                padding: 75px 5%;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
-            .button-outline {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-        }
-
-    </style>
+.feature-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.feature-text {
+    max-width: 600px;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.step {
+    padding: 35px;
+
+    border-top: 2px solid #9b6b4a;
+}
+
+.step-number {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    color: #c7a384;
+}
+
+.step h3 {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.step p {
+    color: #6d5c52;
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote-section {
+    text-align: center;
+
+    background: #3b2a22;
+
+    color: white;
+}
+
+.quote-section blockquote {
+    max-width: 900px;
+    margin: auto;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(36px, 5vw, 65px);
+
+    line-height: 1.15;
+}
+
+.quote-section p {
+    margin-top: 25px;
+    color: #d9c5b5;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.contact p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: #6d5c52;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #211814;
+
+    color: #d9c5b5;
+}
+
+footer strong {
+    color: white;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+        gap: 14px;
+        font-size: 12px;
+    }
+
+    section {
+        padding: 75px 5%;
+    }
+
+    .about,
+    .feature {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-text {
+        padding-right: 0;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img,
+    .feature-image img {
+        height: 380px;
+    }
+
+    .button-outline {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 8px;
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-    <nav>
+<nav>
 
-        <a href="#" class="logo">
-            Sugilanon
-        </a>
+    <a href="#" class="logo">
+        Sugilanon
+    </a>
 
-        <div class="nav-links">
+    <div class="nav-links">
 
-            <a href="#about">About</a>
+        <a href="#about">About</a>
 
-            <a href="#products">Products</a>
+        <a href="#products">Products</a>
 
-            <a href="#how-it-works">How It Works</a>
+        <a href="#how-it-works">How It Works</a>
 
-            <a href="#contact">Contact</a>
+        <a href="#contact">Contact</a>
 
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Meaningful moments. Meaningful stories.
         </div>
 
-    </nav>
+        <h1>
+            Every <span>Story</span> Matters.
+        </h1>
 
+        <p>
+            Thoughtfully created products that help people
+            start conversations, preserve memories, and
+            connect with the people who matter most.
+        </p>
 
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-                Meaningful moments. Meaningful stories.
-            </div>
-
-            <h1>
-                Every <span>Story</span> Matters.
-            </h1>
-
-            <p>
-                Thoughtfully created products that help people
-                start conversations, preserve memories, and
-                connect with the people who matter most.
-            </p>
+        <div class="hero-buttons">
 
             <a href="#products" class="button">
                 Explore Our Products
@@ -514,325 +645,394 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
+<!-- =========================
+     ABOUT
+========================= -->
 
-    <section id="about">
+<section id="about">
 
-        <div class="about">
+    <div class="about">
 
-            <div>
-
-                <div class="section-label">
-                    Our Story
-                </div>
-
-                <h2 class="section-title">
-                    Some stories are meant to be shared.
-                </h2>
-
-                <p class="section-description">
-                    Sugilanon was created from a simple belief:
-                    every person has a story worth telling.
-                </p>
-
-                <br>
-
-                <p class="section-description">
-                    Through conversation cards, journals,
-                    keepsakes, and memory-filled experiences,
-                    we create simple ways for people to slow
-                    down, talk, listen, and remember.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <h3>
-                    Every story<br>
-                    matters.
-                </h3>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PRODUCTS
-    ========================= -->
-
-    <section id="products" class="products-section">
-
-        <div class="products-header">
+        <div class="about-text">
 
             <div class="section-label">
-                Our Collections
+                Our Story
             </div>
 
             <h2 class="section-title">
-                Made for meaningful moments.
+                Some stories are meant to be shared.
             </h2>
 
             <p class="section-description">
-                Discover products designed to help you
-                connect, reflect, and preserve the moments
-                you never want to forget.
+                Sugilanon was created from a simple belief:
+                every person has a story worth telling.
+            </p>
+
+            <br>
+
+            <p class="section-description">
+                Through conversation cards, journals,
+                keepsakes, and memory-filled experiences,
+                we create simple ways for people to slow
+                down, talk, listen, and remember.
             </p>
 
         </div>
 
 
-        <div class="product-grid">
+        <div class="about-image">
 
-
-            <!-- PRODUCT 1 -->
-
-            <div class="product-card">
-
-                <div class="product-image">
-                    Heartlets
-                </div>
-
-                <div class="product-content">
-
-                    <h3>
-                        Heartlets
-                    </h3>
-
-                    <p>
-                        Conversation cards designed to
-                        spark meaningful conversations,
-                        laughter, memories, and connection.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Discover Heartlets →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 2 -->
-
-            <div class="product-card">
-
-                <div class="product-image">
-                    Keepsake Collection
-                </div>
-
-                <div class="product-content">
-
-                    <h3>
-                        Keepsake Collection
-                    </h3>
-
-                    <p>
-                        A heartfelt way to collect messages,
-                        memories, and words from the people
-                        who matter most.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Explore the Collection →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 3 -->
-
-            <div class="product-card">
-
-                <div class="product-image">
-                    Journals
-                </div>
-
-                <div class="product-content">
-
-                    <h3>
-                        Journals
-                    </h3>
-
-                    <p>
-                        Beautiful spaces for thoughts,
-                        reflections, stories, and memories
-                        worth keeping.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Explore Journals →
-                    </a>
-
-                </div>
-
-            </div>
-
+            <img
+                src="sugilanon-display.jpg"
+                alt="Sugilanon product display"
+            >
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         HOW IT WORKS
-    ========================= -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
-    <section id="how-it-works">
+<section id="products" class="products-section">
+
+    <div class="products-header">
 
         <div class="section-label">
-            Simple. Intentional. Meaningful.
+            Our Collections
         </div>
 
         <h2 class="section-title">
-            Start a conversation.
+            Made for meaningful moments.
         </h2>
 
         <p class="section-description">
-            Sometimes all it takes is one question,
-            one picture, or one little moment.
+            Discover products designed to help you
+            connect, reflect, and preserve the moments
+            you never want to forget.
         </p>
 
+    </div>
 
-        <div class="steps">
+
+    <div class="product-grid">
 
 
-            <div class="step">
+        <!-- HEARTLETS CLASSIC -->
 
-                <div class="step-number">
-                    01
-                </div>
+        <div class="product-card">
 
-                <h3>
-                    Choose
-                </h3>
+            <div class="product-image">
 
-                <p>
-                    Pick a card, journal, or keepsake
-                    designed for your moment.
-                </p>
+                <img
+                    src="heartlets-classic.jpg"
+                    alt="Sugilanon Heartlets Classic"
+                >
 
             </div>
 
-
-            <div class="step">
-
-                <div class="step-number">
-                    02
-                </div>
+            <div class="product-content">
 
                 <h3>
-                    Share
+                    Heartlets
                 </h3>
 
                 <p>
-                    Ask a question, tell a story,
-                    and create space for honest conversations.
+                    Picture cards designed to spark
+                    meaningful conversations, laughter,
+                    memories, and connection.
                 </p>
 
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    03
-                </div>
-
-                <h3>
-                    Connect
-                </h3>
-
-                <p>
-                    Turn an ordinary moment into
-                    something worth remembering.
-                </p>
+                <a href="#contact" class="text-link">
+                    Learn More →
+                </a>
 
             </div>
-
 
         </div>
 
-    </section>
+
+        <!-- MEME EDITION -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="heartlets-meme.jpg"
+                    alt="Sugilanon Heartlets Meme Edition"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <h3>
+                    Heartlets: Meme Edition
+                </h3>
+
+                <p>
+                    A playful collection of picture-based
+                    prompts designed for intentional talks,
+                    shared laughter, and meaningful
+                    conversations.
+                </p>
+
+                <a href="#contact" class="text-link">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
 
 
-    <!-- =========================
-         QUOTE
-    ========================= -->
+        <!-- JOURNALS -->
 
-    <section class="quote-section">
+        <div class="product-card">
 
-        <blockquote>
-            "Because the best memories
-            are the ones we share."
-        </blockquote>
+            <div class="product-image">
 
-        <p>
-            — Sugilanon
-        </p>
+                <div class="placeholder-image">
+                    Journals
+                </div>
 
-    </section>
+            </div>
+
+            <div class="product-content">
+
+                <h3>
+                    Journals
+                </h3>
+
+                <p>
+                    Beautiful spaces for thoughts,
+                    reflections, stories, and memories
+                    worth keeping.
+                </p>
+
+                <a href="#contact" class="text-link">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
+    </div>
 
-    <section id="contact">
+</section>
 
-        <div class="contact">
+
+<!-- =========================
+     FEATURE
+========================= -->
+
+<section>
+
+    <div class="feature">
+
+
+        <div class="feature-image">
+
+            <img
+                src="sugilanon-display.jpg"
+                alt="Sugilanon memories and conversation experience"
+            >
+
+        </div>
+
+
+        <div class="feature-text">
 
             <div class="section-label">
-                Let's Connect
+                More Than A Product
             </div>
 
             <h2 class="section-title">
-                Have a story to share?
+                Create moments people will remember.
             </h2>
 
-            <p>
-                We'd love to hear from you.
-                Follow Sugilanon or send us a message
-                to learn more about our products.
+            <p class="section-description">
+                Whether you're spending time with friends,
+                family, a partner, or your community,
+                Sugilanon helps create intentional spaces
+                for people to share stories and connect.
             </p>
 
-            <a href="mailto:hello@sugilanon.com"
-               class="button">
-                Get in Touch
+            <br>
+
+            <a href="#products" class="button">
+                Explore Sugilanon
             </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+<!-- =========================
+     HOW IT WORKS
+========================= -->
 
-    <footer>
+<section id="how-it-works">
 
-        <div>
-            © 2026 <strong>Sugilanon</strong>
+    <div class="section-label">
+        Simple. Intentional. Meaningful.
+    </div>
+
+    <h2 class="section-title">
+        Start a conversation.
+    </h2>
+
+    <p class="section-description">
+        Sometimes all it takes is one question,
+        one picture, or one little moment.
+    </p>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Choose
+            </h3>
+
+            <p>
+                Pick a card, journal, or keepsake
+                designed for your moment.
+            </p>
+
         </div>
 
-        <div>
-            Every story matters.
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Share
+            </h3>
+
+            <p>
+                Ask a question, tell a story,
+                and create space for honest
+                conversations.
+            </p>
+
         </div>
 
-    </footer>
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Connect
+            </h3>
+
+            <p>
+                Turn an ordinary moment into
+                something worth remembering.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUOTE
+========================= -->
+
+<section class="quote-section">
+
+    <blockquote>
+        "Because the best memories
+        are the ones we share."
+    </blockquote>
+
+    <p>
+        — Sugilanon
+    </p>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="contact">
+
+        <div class="section-label">
+            Let's Connect
+        </div>
+
+        <h2 class="section-title">
+            Have a story to share?
+        </h2>
+
+        <p>
+            We'd love to hear from you.
+            Follow Sugilanon or send us a message
+            to learn more about our products.
+        </p>
+
+        <a
+            href="mailto:hello@sugilanon.com"
+            class="button"
+        >
+            Get in Touch
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        © 2026 <strong>Sugilanon</strong>
+    </div>
+
+    <div>
+        Every story matters.
+    </div>
+
+</footer>
 
 
 </body>
