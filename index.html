@@ -601,6 +601,114 @@
             font-size: 13px;
         }
 
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: #F8F0E4;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 55px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1px solid rgba(111,76,62,.12);
+            padding: 34px;
+            position: relative;
+            box-shadow: 0 12px 30px rgba(70,45,25,.06);
+        }
+
+        .stars {
+            color: #C19A6B;
+            letter-spacing: 3px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card blockquote {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--deep);
+        }
+
+        .testimonial-person {
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(111,76,62,.14);
+        }
+
+        .testimonial-person strong {
+            display: block;
+            color: var(--brown);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 20px;
+        }
+
+        .testimonial-person span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* STORY GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .gallery-main,
+        .gallery-side {
+            display: grid;
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+
+        .gallery-main img {
+            min-height: 520px;
+        }
+
+        .gallery-side {
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .gallery-side img {
+            min-height: 250px;
+        }
+
+        /* LOGO */
+        .brand-logo {
+            width: 46px;
+            height: 46px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .brand-lockup {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-wordmark {
+            font-family: "The Seasons", "Playfair Display", Georgia, serif;
+            font-size: 22px;
+            letter-spacing: 3px;
+            color: var(--brown);
+        }
+
         /* MOBILE */
         @media (max-width: 850px) {
             .nav-inner {
@@ -621,14 +729,16 @@
             }
 
             .brand-grid,
-            .contact-grid {
+            .contact-grid,
+            .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
             .mv-grid,
             .products-grid,
-            .steps {
+            .steps,
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -640,6 +750,8 @@
                 border-left: 0;
                 border-top: 1px solid rgba(255,255,255,.22);
             }
+
+            .gallery-side { grid-template-rows: 1fr; }
 
             .hero {
                 min-height: 720px;
@@ -691,11 +803,15 @@
     <!-- NAVIGATION -->
     <nav>
         <div class="container nav-inner">
-            <a href="#top" class="brand">SUGILANON</a>
+            <a href="#top" class="brand-lockup" aria-label="Sugilanon home">
+                <img src="sugilanon-logo.jpg" alt="Sugilanon logo" class="brand-logo">
+                <span class="brand-wordmark">SUGILANON</span>
+            </a>
 
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#beliefs">What We Believe</a>
+                <a href="#stories">Stories</a>
                 <a href="#products">Products</a>
                 <a href="#anchor">Our Anchor</a>
                 <a href="#contact" class="nav-order">Order</a>
@@ -818,7 +934,7 @@
 
                     <div class="pillar">
                         <h3>Reflect</h3>
-                        <p>Through journals and stories.</p>
+                        <p>Through stories and honest reflection.</p>
                     </div>
 
                     <div class="pillar">
@@ -877,11 +993,12 @@
         <section id="products">
             <div class="container">
                 <div class="eyebrow">What we create</div>
-                <h2>Ways to connect, reflect, and remember.</h2>
+                <h2>Products made for stories worth sharing.</h2>
 
                 <p class="intro">
-                    Thoughtfully created products that make space for meaningful
-                    conversations, personal reflection, and stories worth keeping.
+                    From meaningful conversations to keepsakes that hold a memory,
+                    Sugilanon creates simple, beautiful ways to make stories part
+                    of everyday life and faith.
                 </p>
 
                 <div class="products-grid">
@@ -895,37 +1012,41 @@
                         <div class="product-info">
                             <h3>Heartlets</h3>
                             <p>
-                                Conversation starters designed to help people
-                                share, listen, laugh, reflect, and connect.
+                                A collection of 50 captivating picture cards designed
+                                to open meaningful conversations. Pick a picture,
+                                share your story, and discover what is written on
+                                the heart.
                             </p>
                         </div>
                     </article>
 
                     <article class="product-card">
                         <div class="product-image">
-                            <img src="heartlets-meme.jpg"
-                                 alt="Sugilanon Heartlets Meme Edition">
+                            <img src="heartlets-eme.jpg"
+                                 alt="The heart behind Sugilanon Heartlets">
                         </div>
 
                         <div class="product-info">
                             <h3>Heartlets: Meme Edition</h3>
                             <p>
-                                A playful way to open conversations and create
-                                memorable moments together.
+                                A playful edition made to spark conversation,
+                                shared laughter, honest reflection, and connection.
                             </p>
                         </div>
                     </article>
 
                     <article class="product-card">
                         <div class="product-image">
-                            <div class="placeholder">Journals</div>
+                            <img src="display.jpg"
+                                 alt="Sugilanon keepsake setup">
                         </div>
 
                         <div class="product-info">
-                            <h3>Journals</h3>
+                            <h3>Keepsake Collection</h3>
                             <p>
-                                Space to reflect, write, remember, and document
-                                the stories God is writing in our lives.
+                                A heartfelt way to gather messages, wishes, prayers,
+                                and memories—words your loved ones can treasure long
+                                after the celebration.
                             </p>
                         </div>
                     </article>
@@ -939,6 +1060,105 @@
                        rel="noopener noreferrer">
                         View & Order Products
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOMER STORIES -->
+        <section id="stories" class="testimonials">
+            <div class="container">
+                <div class="eyebrow">Customer stories</div>
+                <h2>Stories from people who shared theirs.</h2>
+
+                <p class="intro">
+                    Heartlets was created to help people open up, listen deeply,
+                    and discover the stories behind the people they care about.
+                </p>
+
+                <div class="testimonial-grid">
+
+                    <article class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>
+                            “In Counselling, I learned about the importance of
+                            ‘Talk Therapy’ to help process emotions, especially
+                            unexpressed ones.
+                            <br><br>
+                            Grateful for Heartlets from @sugilanonprintsph to aid
+                            in discipleship, small groups, and even gospel sharing.
+                            For life lived for Christ truly matters!”
+                        </blockquote>
+                        <div class="testimonial-person">
+                            <strong>Faith</strong>
+                            <span>Guidance Counselor</span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>
+                            “Heartlets allowed me to develop a deeper understanding
+                            for my colleagues, friends, discipleship group, and even
+                            counseling clients. This helped me try a new approach in
+                            starting meaningful conversations, and get to know people
+                            on another level.
+                            <br><br>
+                            Heartlets is a great tool to cultivate positive relationships
+                            and establish a stronger foundation between people.”
+                        </blockquote>
+                        <div class="testimonial-person">
+                            <strong>Ceshy</strong>
+                            <span>Guidance Counselor</span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>
+                            “It was so profound... We found ourselves in the midst
+                            of harsh truth about life and how we are dealing things
+                            differently and come together to share each other's
+                            journey with varied pictures of peace, love, relationships,
+                            and principles.”
+                        </blockquote>
+                        <div class="testimonial-person">
+                            <strong>Jay</strong>
+                            <span>Heartlets customer</span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>
+                            “God used this material to help us pour out our inner
+                            hurts and find healing and peace through a beautiful,
+                            honest conversation.”
+                        </blockquote>
+                        <div class="testimonial-person">
+                            <strong>Yannie</strong>
+                            <span>Heartlets customer</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT IN USE -->
+        <section>
+            <div class="container">
+                <div class="eyebrow">Heartlets in real life</div>
+                <h2>Not just cards. A space for stories.</h2>
+
+                <div class="gallery-grid">
+                    <div class="gallery-main">
+                        <img src="feedback-4.jpg" alt="Heartlets customer story">
+                    </div>
+
+                    <div class="gallery-side">
+                        <img src="picture-cards.jpg" alt="Sugilanon picture cards">
+                        <img src="celebrate.jpg" alt="Sugilanon Heartlets at a celebration">
+                    </div>
                 </div>
             </div>
         </section>
